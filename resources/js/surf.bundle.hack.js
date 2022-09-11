@@ -526,13 +526,13 @@
                 y: 0,
               },
               lives: {
-                current: 3,
+                current: 114514,
                 max: 3,
                 numCollected: 0,
               },
               boosts: {
-                current: 6,
-                max: 6,
+                current: 114514,
+                max: 3,
                 numCollected: 0,
                 numUsed: 0,
               },
@@ -8758,18 +8758,54 @@
           }
           collectBoost() {
             te.sys.game.boosts.current < te.sys.game.boosts.max &&
-              ((te.sys.game.boosts.current += 3), ue.sys.refreshDisplay()),
+              ((te.sys.game.boosts.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            te.sys.game.lives.current < te.sys.game.lives.max &&
+              ((te.sys.game.lives.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            (te.sys.game.friend = !0),
+              be.sys.createPlayerSprite(),
+              te.sys.session.settings.mode === q.Endless &&
+                ((te.sys.game.shields.current = te.sys.game.shields.max),
+                ue.sys.refreshDisplay()),
               Me.sys.setVibration("pickup");
           }
           collectLife() {
+            te.sys.game.boosts.current < te.sys.game.boosts.max &&
+              ((te.sys.game.boosts.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
             te.sys.game.lives.current < te.sys.game.lives.max &&
-              ((te.sys.game.lives.current += 3), ue.sys.refreshDisplay()),
+              ((te.sys.game.lives.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            (te.sys.game.friend = !0),
+              be.sys.createPlayerSprite(),
+              te.sys.session.settings.mode === q.Endless &&
+                ((te.sys.game.shields.current = te.sys.game.shields.max),
+                ue.sys.refreshDisplay()),
               Me.sys.setVibration("pickup");
           }
           collectCoin() {
             (te.sys.game.coins += 114514), Me.sys.setVibration("pickup");
+          te.sys.game.boosts.current < te.sys.game.boosts.max &&
+            ((te.sys.game.boosts.current += 114514), ue.sys.refreshDisplay()),
+            Me.sys.setVibration("pickup");
+          te.sys.game.lives.current < te.sys.game.lives.max &&
+            ((te.sys.game.lives.current += 114514), ue.sys.refreshDisplay()),
+            Me.sys.setVibration("pickup");
+          (te.sys.game.friend = !0),
+            be.sys.createPlayerSprite(),
+            te.sys.session.settings.mode === q.Endless &&
+              ((te.sys.game.shields.current = te.sys.game.shields.max),
+              ue.sys.refreshDisplay()),
+            Me.sys.setVibration("pickup");
           }
           collectFriend() {
+          te.sys.game.boosts.current < te.sys.game.boosts.max &&
+              ((te.sys.game.boosts.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            te.sys.game.lives.current < te.sys.game.lives.max &&
+              ((te.sys.game.lives.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
             (te.sys.game.friend = !0),
               be.sys.createPlayerSprite(),
               te.sys.session.settings.mode === q.Endless &&
@@ -8778,19 +8814,32 @@
               Me.sys.setVibration("pickup");
           }
           removeFriend(e = !1) {
-            !te.sys.game.friend ||
-              te.sys.game.cheat.safety ||
-              e ||
-              ((te.sys.game.friend = !1),
+          te.sys.game.boosts.current < te.sys.game.boosts.max &&
+              ((te.sys.game.boosts.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            te.sys.game.lives.current < te.sys.game.lives.max &&
+              ((te.sys.game.lives.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            (te.sys.game.friend = !0),
               be.sys.createPlayerSprite(),
-              (te.sys.game.shields.current = 0),
-              ue.sys.refreshDisplay());
+              te.sys.session.settings.mode === q.Endless &&
+                ((te.sys.game.shields.current = te.sys.game.shields.max),
+                ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
           }
           useShield() {
-            te.sys.game.cheat.safety ||
-              ((te.sys.game.shields.current -= 1),
-              ue.sys.refreshDisplay(),
-              Me.sys.setVibration("small"));
+          te.sys.game.boosts.current < te.sys.game.boosts.max &&
+              ((te.sys.game.boosts.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            te.sys.game.lives.current < te.sys.game.lives.max &&
+              ((te.sys.game.lives.current += 114514), ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
+            (te.sys.game.friend = !0),
+              be.sys.createPlayerSprite(),
+              te.sys.session.settings.mode === q.Endless &&
+                ((te.sys.game.shields.current = te.sys.game.shields.max),
+                ue.sys.refreshDisplay()),
+              Me.sys.setVibration("pickup");
           }
           lose() {
               Me.sys.setVibration("tiny");
@@ -8811,12 +8860,11 @@
               Me.sys.setVibration("small");
           }
           failGate(e) {
-            te.sys.game.highScore &&
-              (ue.sys.sendNotification("score"), (te.sys.game.highScore = !1)),
-              (te.sys.game.gates = 0),
+            e - 1 === this.previousGate && (te.sys.game.gates += 1),
               (this.previousGate = e),
+              te.sys.saveGameStats(),
               ue.sys.refreshDisplay(),
-              Me.sys.setVibration("slow");
+              Me.sys.setVibration("small");
           }
           stopPlayerSpeed() {
             (this.speed.current = 0),
