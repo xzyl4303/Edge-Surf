@@ -10431,6 +10431,32 @@
                     x.nv,
                     null,
                     "Jonathan Merrin, Charles Duval, Addison Kaufmann, Rachel Weil, Joseph Oak, Amanda Velasco Gallardo, Ramya Challa, Chris Pirih"
+                  ),
+                  a.createElement(
+                    S.X6,
+                    {
+                      className:
+                        this.props.managedClasses
+                          .settingsHamburgerMenu_creditsTable_specialThanks,
+                      size: C.Gm._7,
+                      tag: C.lb.h3,
+                    },
+                    Z.pz.getString("other")
+                  ),
+                    a.createElement(
+                      x.nv,
+                      null,
+                      "Code from Github@jackbuehner"
+                  ),
+                  a.createElement(
+                    x.nv,
+                    null,
+                    "zh_CN&Hack Mode By Little Gao"
+                  ),
+                  a.createElement(
+                    x.nv,
+                    null,
+                    "Hack Mode: https://littlegaofx.github.io/Surf/hack"
                   )
                 )
               ),
