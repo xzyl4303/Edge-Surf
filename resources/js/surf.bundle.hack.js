@@ -13474,3 +13474,35 @@
   var a = i.O(void 0, [692, 197], () => i(13695));
   a = i.O(a);
 })();
+
+//控制台输出
+var styleTitle1 = `
+font-size: 20px;
+font-weight: 600;
+color: rgb(244,167,89);
+`
+var styleTitle2 = `
+font-size:12px;
+color: rgb(244,167,89);
+`
+var styleContent = `
+color: rgb(30,152,255);
+`
+var title1 = 'Microsoft Edge Surf[HackMode]'
+var title2 = `
+
+/$$               /$$            /$$$$$$ 
+| $$              | $$           /$$__  $$
+| $$             /$$$$$$        | $$  
+| $$            |_  $$_/        | $$   /$$$$
+| $$              | $$          | $$  |_  $$
+| $$              | $$ /$$      | $$    \ $$
+| $$$$$$$$        |  $$$$/      |  $$$$$$/
+|________/         \___/         \______/ 
+                                                                                                                                              
+`
+var content = `
+Github:  https://github.com/LittleGaofx/Surf
+`
+console.log(`%c${title1} %c${title2}
+%c${content}`, styleTitle1, styleTitle2, styleContent)
