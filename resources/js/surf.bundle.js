@@ -13483,16 +13483,17 @@ var title2 = `
 
 /$$               /$$            /$$$$$$ 
 | $$              | $$           /$$__  $$
-| $$             /$$$$$$        | $$  \__/
-| $$            |_  $$_/        | $$ /$$$$
-| $$              | $$          | $$|_  $$
-| $$              | $$ /$$      | $$  \ $$
+| $$             /$$$$$$        | $$  
+| $$            |_  $$_/        | $$   /$$$$
+| $$              | $$          | $$  |_  $$
+| $$              | $$ /$$      | $$    \ $$
 | $$$$$$$$        |  $$$$/      |  $$$$$$/
 |________/         \___/         \______/ 
                                                                                                                                               
 `
 var content = `
 Github:  https://github.com/LittleGaofx/Surf
+
 Hack Mode:  https://littlegaofx.github.io/Surf/hack
 `
 console.log(`%c${title1} %c${title2}
